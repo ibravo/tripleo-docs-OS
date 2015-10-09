@@ -1,5 +1,5 @@
-Basic Deployment
-================
+Basic Deployment (CLI)
+======================
 
 With these few steps you will be able to simply deploy via |project| to your
 environment using our defaults in a few steps.
@@ -30,13 +30,7 @@ Get Images
 
 .. note::
 
-       If you already have images built, perhaps from a previous installation of
-       |project|, you can simply copy those image files into your regular user's
-       home directory and skip this section.
-
-       If you do this, be aware that sometimes newer versions of |project| do not
-       work with older images, so if the deployment fails it may be necessary to
-       delete the older images and restart the process from this step.
+       Images built from the latest repo that has passed CI can be found `here`_
 
        The image files required are::
 
@@ -47,6 +41,8 @@ Get Images
            overcloud-full.initrd
            overcloud-full.qcow2
            overcloud-full.vmlinuz
+
+.. _here: https://repos.fedorapeople.org/repos/openstack-m/rdo-images-centos-liberty/
 
 Images must be built prior to doing a deployment. An IPA ramdisk,
 deployment ramdisk, and openstack-full image can all be built using
