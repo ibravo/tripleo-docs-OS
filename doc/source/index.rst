@@ -11,7 +11,7 @@ Contents:
    Introduction <introduction/introduction>
    Environment Setup <environments/environments>
    Undercloud Installation <installation/installation>
-   Basic Deployment (CLI) <basic_deployment/basic_deployment_cli>
+   Basic Deployment <basic_deployment/basic_deployment_cli>
    Advanced Deployment <advanced_deployment/advanced_deployment>
    Post Deployment <post_deployment/post_deployment>
    Troubleshooting <troubleshooting/troubleshooting>

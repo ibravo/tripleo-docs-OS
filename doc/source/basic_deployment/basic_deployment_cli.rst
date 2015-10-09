@@ -1,5 +1,5 @@
-Basic Deployment (CLI)
-======================
+Basic Deployment
+================
 
 With these few steps you will be able to simply deploy via |project| to your
 environment using our defaults in a few steps.
