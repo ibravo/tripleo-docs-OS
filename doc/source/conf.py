@@ -29,9 +29,10 @@ import sphinx_rtd_theme
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
-    'oslosphinx'
 ]
 
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -46,10 +47,10 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'TripleO'
+project = u'RDO Manager'
 copyright = u'2015, OpenStack Foundation'
-bug_tracker = u'Launchpad'
-bug_tracker_url = u'https://launchpad.net/tripleo'
+bug_tracker = u'Bugzilla'
+bug_tracker_url = u'https://bugzilla.redhat.com'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
