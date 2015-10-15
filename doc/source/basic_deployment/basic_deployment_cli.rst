@@ -80,7 +80,11 @@ non-root user that was used to install the undercloud.
     ::
 
         export USE_DELOREAN_TRUNK=1
+<<<<<<< HEAD
         export DELOREAN_TRUNK_REPO="http://trunk.rdoproject.org/centos7/current-tripleo/"
+=======
+        export DELOREAN_TRUNK_REPO="http://trunk.rdoproject.org/liberty/centos7/current-passed-ci/"
+>>>>>>> Modify instructions for using delorean to build images
         export DELOREAN_REPO_FILE="delorean.repo"
 
 #. Build the required images:
