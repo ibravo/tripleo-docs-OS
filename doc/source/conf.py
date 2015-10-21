@@ -26,13 +26,11 @@ import sphinx_rtd_theme
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-]
+extensions = []
 
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_options = {}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -48,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'RDO Manager'
-copyright = u'2015, OpenStack Foundation'
+copyright = u'2015, RDO Community'
 bug_tracker = u'Bugzilla'
 bug_tracker_url = u'https://bugzilla.redhat.com'
 
@@ -99,12 +97,15 @@ pygments_style = 'sphinx'
 # -- Options for HTML output ---------------------------------------------------
 
 html_static_path = ['_custom']
-# html_style = 'custom.css'
-templates_path = ['_templates']
+html_style = 'custom.css'
+html_last_updated_fmt = '%b %d, %Y'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '%sdoc' % project
+htmlhelp_basename = 'rdo-manager-doc'
 
+html_show_sourcelink = True
+html_show_sphinx = True
+html_show_copyright = True
 
 # -- Options for LaTeX output --------------------------------------------------
 
