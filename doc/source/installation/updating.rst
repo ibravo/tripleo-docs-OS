@@ -3,18 +3,26 @@ Updating Undercloud Components
 
 You can upgrade any packages that are installed on the undercloud machine.
 
-#. Remove all Delorean repositories::
+.. admonition:: Delorean
+  :class: delorean
 
-       sudo rm /etc/yum.repos.d/delorean*
+     Remove all Delorean repositories::
 
-#. Enable new Delorean repositories:
+        sudo rm /etc/yum.repos.d/delorean*
 
-.. include:: ../repositories.txt
+     Enable last known good RDO Trunk Delorean repository for liberty
 
-.. We need to manually continue our list numbering here since the above
-  "include" directive breaks the numbering.
+     ::
 
-3. Use yum to update all installed packages::
+         sudo curl -o /etc/yum.repos.d/delorean.repo http://trunk.rdoproject.org/centos7-liberty/current-passed-ci/delorean.repo
+
+     Enable the Delorean Deps repository
+
+     ::
+
+       sudo curl -o /etc/yum.repos.d/delorean-deps.repo http://trunk.rdoproject.org/centos7-liberty/delorean-deps.repo
+
+#. Use yum to update all installed packages::
 
     sudo yum update -y
 

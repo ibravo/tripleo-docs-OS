@@ -1,11 +1,31 @@
-   Enable last known good RDO Trunk Delorean repository for liberty
+   There are two choices for RDO OpenStack repos.
 
-   ::
+   .. admonition:: CentOS RDO release
+     :class: rdo_release
 
-       sudo curl -o /etc/yum.repos.d/delorean.repo http://trunk.rdoproject.org/centos7-liberty/current-passed-ci/delorean.repo
+       Install the release RPM
 
-   Enable the Delorean Deps repository
+       ::
 
-   ::
+           sudo yum install -y http://rdoproject.org/repos/openstack-liberty/rdo-release-liberty.rpm
 
-     sudo curl -o /etc/yum.repos.d/delorean-deps.repo http://trunk.rdoproject.org/centos7-liberty/delorean-deps.repo
+   .. admonition:: Delorean
+     :class: delorean
+
+       Enable last known good RDO Trunk Delorean repository for liberty
+
+       ::
+
+           sudo curl -o /etc/yum.repos.d/delorean.repo http://trunk.rdoproject.org/centos7-liberty/current-passed-ci/delorean.repo
+
+       Enable the Delorean Deps repository
+
+       ::
+
+         sudo curl -o /etc/yum.repos.d/delorean-deps.repo http://trunk.rdoproject.org/centos7-liberty/delorean-deps.repo
+
+       Install yum-plugin-priorities
+
+       ::
+
+           sudo yum -y install yum-plugin-priorities

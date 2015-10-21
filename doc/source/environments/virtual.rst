@@ -122,8 +122,7 @@ Preparing the Virtual Environment (Automated)
     sudo yum install -y instack-undercloud
 
 #. The virt setup automatically sets up a vm for the Undercloud installed with
-   the same base OS as the host. See the Note below to choose a different
-   OS.:
+   the same base OS as the host. See the Note below to choose a different OS.:
 
    .. note::
       To setup the undercloud vm with a base OS different from the host,
@@ -149,11 +148,11 @@ Preparing the Virtual Environment (Automated)
 
   .. note::
 
-    By default, VMs will be created with 1 vCPU and 4096 MiB RAM. To adjust
-    those values::
+     By default, VMs will be created with 1 vCPU and 4096 MiB RAM. To adjust
+     those values::
 
-         export NODE_CPU=4
-         export NODE_MEM=16384
+        export NODE_CPU=4
+        export NODE_MEM=16384
 
   .. admonition:: RHEL
      :class: rhel
@@ -200,28 +199,29 @@ Preparing the Virtual Environment (Automated)
          export REG_ACTIVATION_KEY="[activation key]"
 
 
-   .. admonition:: Ceph
-      :class: ceph
+  .. admonition:: Ceph
+     :class: ceph
 
-      To use Ceph you will need at least one additional virtual machine to be
-      provisioned as a Ceph OSD; set the ``NODE_COUNT`` variable to 3, from a
-      default of 2, so that the overcloud will have exactly one more::
+     To use Ceph you will need at least one additional virtual machine to be
+     provisioned as a Ceph OSD; set the ``NODE_COUNT`` variable to 3, from a
+     default of 2, so that the overcloud will have exactly one more::
 
           export NODE_COUNT=3
 
-   .. note::
-      The ``TESTENV_ARGS`` environment variable can be used to customize the
-      virtual environment configuration.  For example, it could be used to
-      enable additional networks as follows::
+  .. note::
+
+     The ``TESTENV_ARGS`` environment variable can be used to customize the
+     virtual environment configuration.  For example, it could be used to
+     enable additional networks as follows::
 
           export TESTENV_ARGS="--baremetal-bridge-names 'brbm brbm1 brbm2'"
 
-   ::
+  ::
 
       instack-virt-setup
 
-   If the script encounters problems, see
-   :doc:`../troubleshooting/troubleshooting-virt-setup`.
+If the script encounters problems, see
+:doc:`../troubleshooting/troubleshooting-virt-setup`.
 
 When the script has completed successfully it will output the IP address of the
 instack vm that has now been installed with a base OS.

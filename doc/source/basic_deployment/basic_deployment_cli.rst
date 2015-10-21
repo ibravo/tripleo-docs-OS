@@ -75,17 +75,30 @@ non-root user that was used to install the undercloud.
 
           export NODE_DIST=rhel7
 
-#. Install the current-passed-ci delorean repo and deps repo into the overcloud images:
+#. Install the openstack repos into the overcloud images:
 
-    ::
+    There are two choices for RDO OpenStack repos.
 
-        export USE_DELOREAN_TRUNK=1
-<<<<<<< HEAD
-        export DELOREAN_TRUNK_REPO="http://trunk.rdoproject.org/centos7/current-tripleo/"
-=======
-        export DELOREAN_TRUNK_REPO="http://trunk.rdoproject.org/liberty/centos7/current-passed-ci/"
->>>>>>> Modify instructions for using delorean to build images
-        export DELOREAN_REPO_FILE="delorean.repo"
+    .. admonition:: CentOS RDO release
+      :class: rdo_release
+
+        Use the RDO release repo from the CentOS cloud SIG:
+
+        ::
+
+            export RDO_RELEASE='liberty'
+
+    .. admonition:: Delorean
+      :class: delorean
+
+        Alternatively, Enable delorean for package builds directly from the stable/liberty
+        branches upstream:
+
+        ::
+
+            export USE_DELOREAN_TRUNK=1
+            export DELOREAN_TRUNK_REPO="http://trunk.rdoproject.org/liberty/centos7/current-passed-ci/"
+            export DELOREAN_REPO_FILE="delorean.repo"
 
 #. Build the required images:
 
@@ -133,14 +146,6 @@ non-root user that was used to install the undercloud.
             # rhel-7-server-extras-rpms
             # rhel-7-server-openstack-6.0-rpms
             export REG_ACTIVATION_KEY="[activation key]"
-
-  .. admonition:: Source
-     :class: source
-
-     Git checkouts of the puppet modules can be used instead of packages. Export the
-     following environment variable::
-
-       export DIB_INSTALLTYPE_puppet_modules=source
 
   ::
 
