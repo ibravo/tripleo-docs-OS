@@ -1,5 +1,31 @@
    There are two choices for RDO OpenStack repos.
 
+      The CentOS RDO release repository doesn’t change much over time and thus is intended for production environment.
+
+      The Delorean repository picks up the source of upstream repositories each time there is a commit and builds a package from it.
+      This repository has more bug fixes in timely manner, and have more recurring CI testing. As far as stability goes, the flow
+      can be summarized like this:
+
+      Delorean (current [1]) -> Delorean (current-passed-ci [2]) -> Stable (rpm repository [3])
+      The delorean repositories (both current and current-passed-ci) share the same repository [4] for dependencies.
+
+      	[1]: http://trunk.rdoproject.org/centos7/current/
+      	[2]: http://trunk.rdoproject.org/centos7/current-passed-ci/
+      	[3]: https://www.rdoproject.org/repos/rdo-release.rpm
+      	[4]: http://trunk.rdoproject.org/centos7/delorean-deps.repo
+
+      Periodically, the latest delorean repository is picked up and flows through a series of integration tests (CI) where OpenStack
+      is configured and deployed in a series of ways to make sure that all the pieces of the puzzle work fine. If the set of
+      packages passes these tests, they are then promoted to current-passed-ci.
+
+      Additionally, Delorean is building directly from a more or less random git hash. Where as production is built more traditionally
+      using a release tarball with some number of cherry-picked patches on top. Thus there is no direct relationship between what is
+      in delorean current-passed-ci repo and what is the "production" repo. The delta is likely small when the production repo gets
+      created at GA, but it is non-zero even then, and just gets larger as time goes on.
+
+
+[Source: RDO list December/16]
+
    .. admonition:: CentOS RDO release
      :class: rdo_release
 
